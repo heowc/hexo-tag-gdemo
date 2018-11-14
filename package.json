@@ -1,0 +1,26 @@
+{
+  "name": "hexo-tag-gdemo",
+  "version": "0.7.0",
+  "description": "glorious-demo tag plugin for Hexo",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heowc/hexo-tag-gdemo.git"
+  },
+  "keywords": [
+    "hexo",
+    "tag",
+    "demo",
+    "glorious-demo"
+  ],
+  "author": {
+    "name": "heowc",
+    "email": "heowc1992@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heowc/hexo-tag-gdemo/issues"
+  },
+  "homepage": "https://github.com/heowc/hexo-tag-gdemo#readme",
+  "dependencies": {}
+}
