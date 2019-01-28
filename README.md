@@ -8,7 +8,7 @@ This is a Hexo tag plugin which allow you to glorious-demo on your blog posts.
 
 # DEMO
 
-[Demo Link](https://heowc.github.io/2018/11/14/demo-hexo-tag-gdemo/)
+[Demo Link](https://heowc.github.io/2018/11/14/introduction-hexo-tag-gdemo/)
 
 # Installation
 

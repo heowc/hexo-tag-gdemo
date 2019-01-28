@@ -1,6 +1,6 @@
 'use strict';
 
-const GDEMO_VERSION = '0.7.1';
+const GDEMO_VERSION = '0.8.0';
 const GDEMO_STYLE_LITERAL = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glorious/demo@${GDEMO_VERSION}/dist/gdemo.min.css">`;
 const GDEMO_SCRIPT_LITERAL = `<script src="https://cdn.jsdelivr.net/npm/@glorious/demo@${GDEMO_VERSION}/dist/gdemo.min.js"></script>`;
 
