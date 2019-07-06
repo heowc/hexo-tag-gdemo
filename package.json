@@ -22,5 +22,7 @@
     "url": "https://github.com/heowc/hexo-tag-gdemo/issues"
   },
   "homepage": "https://github.com/heowc/hexo-tag-gdemo#readme",
-  "dependencies": {}
+  "dependencies": {
+    "prismjs": "^1.16.0"
+  }
 }
