@@ -19,7 +19,7 @@ npm install hexo-tag-gdemo
 # Usage
 
 ```text
-{% gdemo_terminal command [minHeight] [windowTitle] [onCompleteDelay] [promptString] [id] %}
+{% gdemo_terminal command [minHeight] [windowTitle] [onCompleteDelay] [promptString] [id] [highlightingLang] %}
 content
 {% endgdemo_terminal %}
 ```
@@ -27,10 +27,38 @@ content
 or
 
 ```text
-{% gdemo_editor [minHeight] [windowTitle] [onCompleteDelay] [id] %}
+{% gdemo_editor [minHeight] [windowTitle] [onCompleteDelay] [id] [highlightingLang] %}
 content
 {% endgdemo_editor %}
 ```
+
+## command
+
+command represents one or more commands separated by ';'. Be ware that the commands can not contain ' as hexo would assume that the argument is finished and the next will follow what will lead to the object not beeing rendered.
+
+## minHeight
+
+minHeight defines the minimal hight of the editor/terminal window. Beware that it can grow depending on the content you provide.
+
+## windowTitle
+
+windowTitle will be displayed as title of the editor/terminal window. Use whatever you like.
+
+## onCompleteDelay
+
+onCompleteDelay defines the wait delay, after a line of commands/code was typed. This does not affect the content in gdemo_terminal. Content will instantly appear after all commands are typed.
+
+## promptString
+
+The promptString defines, which character or character sequence will be displayed in front of the typed commands. You can use '>' or 'root@local:/$ ' or anything else you like to display.
+
+## id
+
+The id parameter sets a unique id for the instance of editor/terminal. The IDs have to be different for multiple instances inside of the same post.
+
+## highlightingLang
+
+highlightingLang defines the designated highlighting language. If not specified, javascript will be used. You can find a list of supported languages at the [prismjs homepage](https://prismjs.com/#supported-languages).
 
 # FAQ
 
