@@ -5,7 +5,7 @@ const GDEMO_STYLE_LITERAL = `<link rel="stylesheet" href="https://cdn.jsdelivr.n
 const GDEMO_SCRIPT_LITERAL = `<script src="https://cdn.jsdelivr.net/npm/@glorious/demo@${GDEMO_VERSION}/dist/gdemo.min.js"></script>`;
 
 hexo.extend.tag.register('gdemo_terminal', function (args, content) {
-
+   
     if (!args[0]) {
         console.error('command is empty');
         return;
@@ -21,12 +21,21 @@ hexo.extend.tag.register('gdemo_terminal', function (args, content) {
     content = content.replaceAll('\\', '\\\\');
     content = content.replaceAll('\`', '\\`');
 
-    const demo = `
+    var commands = command.split(';');
+
+    var demo = `
         new GDemo('#${id}')
           .openApp('terminal', {minHeight: '${minHeight}', windowTitle: '${windowTitle}', promptString: '${promptString}'})
-          .command(\`${command}\`, {onCompleteDelay: ${onCompleteDelay}})
-          .respond(\`${content}\`)
-          .end();
+    `;
+
+    for (let i = 0; i < commands.length; i++)
+    {
+        demo += `.command(\`${commands[i]}\`, {onCompleteDelay: ${onCompleteDelay}})\n`;
+    }
+
+    demo += `
+        .respond(\`${content}\`)
+        .end();
     `;
 
     const script = `<script>${demo}</script>`;
