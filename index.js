@@ -1,6 +1,6 @@
 'use strict';
 
-var Prism = require('../../node_modules/prismjs/prism.js');
+var Prism = require('prismjs/prism.js');
 
 const GDEMO_VERSION = '0.8.0';
 const GDEMO_STYLE_LITERAL = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glorious/demo@${GDEMO_VERSION}/dist/gdemo.min.css">`;
@@ -22,7 +22,7 @@ hexo.extend.tag.register('gdemo_terminal', function (args, content) {
     const id = args[5] || 'demo-terminal';
     const highlightLang = args[6] || 'javascript';
 
-    require(`../../node_modules/prismjs/components/prism-${highlightLang}`);
+    require(`prismjs/components/prism-${highlightLang}`);
 
     content = content.replaceAll('\\', '\\\\');
     content = content.replaceAll('\`', '\\`');
@@ -69,7 +69,7 @@ hexo.extend.tag.register('gdemo_editor', function (args, content) {
     const id = args[3] || 'demo-editor';
     const highlightLang = args[4] || 'javascript';
 
-    require(`../../node_modules/prismjs/components/prism-${highlightLang}`);
+    require(`prismjs/components/prism-${highlightLang}`);
 
     content = content.replaceAll('\\', '\\\\');
     content = content.replaceAll('\`', '\\`');
