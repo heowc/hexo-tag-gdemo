@@ -5,7 +5,7 @@ var Prism = require('prismjs/prism.js');
 const GDEMO_VERSION = '0.8.0';
 const GDEMO_STYLE_URL = hexo.config.gdemo.style_url || `//cdn.jsdelivr.net/npm/@glorious/demo@${GDEMO_VERSION}/dist/gdemo.min.css`;
 const GDEMO_SCRIPT_URL = hexo.config.gdemo.script_url || `//cdn.jsdelivr.net/npm/@glorious/demo@${GDEMO_VERSION}/dist/gdemo.min.js`;
-const PRISM_STYLE_URL = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css">`;
+const PRISM_STYLE_URL = `//cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css`;
 
 hexo.extend.tag.register('gdemo_terminal', function (args, content) {
 
