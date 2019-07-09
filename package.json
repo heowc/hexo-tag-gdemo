@@ -2,7 +2,7 @@
   "name": "hexo-tag-gdemo",
   "version": "0.9.1",
   "description": "glorious-demo tag plugin for Hexo",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/heowc/hexo-tag-gdemo.git"
@@ -23,6 +23,16 @@
   },
   "homepage": "https://github.com/heowc/hexo-tag-gdemo#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "prismjs": "^1.16.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/preset-env": "^7.5.2"
+  },
+  "scripts": {
+    "build:lib": "npx babel src --out-dir lib"
   }
 }
