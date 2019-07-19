@@ -1,8 +1,9 @@
-const {
-    DEFAULT_GDEMO_STYLE_URL
-    , DEFAULT_GDEMO_SCRIPT_URL
-    , DEFAULT_PRISMJS_THEME
-    , PRISMJS_THEME_STYLE_URL } = require('./constants');
+import {
+    DEFAULT_GDEMO_SCRIPT_URL,
+    DEFAULT_GDEMO_STYLE_URL,
+    DEFAULT_PRISMJS_THEME,
+    PRISMJS_THEME_STYLE_URL
+} from './constants';
 
 export default class Config {
     constructor(hexo) {
@@ -14,10 +15,10 @@ export default class Config {
     }
 
     _customize(gdemoConfig) {
-        this._styleUrl = gdemoConfig.style_url | DEFAULT_GDEMO_STYLE_URL;
-        this._scriptUrl = gdemoConfig.script_url | DEFAULT_GDEMO_SCRIPT_URL;
+        this._styleUrl = gdemoConfig.style_url || DEFAULT_GDEMO_STYLE_URL;
+        this._scriptUrl = gdemoConfig.script_url || DEFAULT_GDEMO_SCRIPT_URL;
         this._prismjsThemeStyleUrl =
-            String(PRISMJS_THEME_STYLE_URL).replace('%s', gdemoConfig.prism_theme | DEFAULT_PRISMJS_THEME);
+            String(PRISMJS_THEME_STYLE_URL).replace('%s', gdemoConfig.prismjs_theme || DEFAULT_PRISMJS_THEME);
     }
 
     _default() {

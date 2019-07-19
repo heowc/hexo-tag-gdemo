@@ -47,7 +47,7 @@ class SimpleContentDecorator extends ContentDecorator {
     }
 }
 
-const Prism = require('prismjs/prism.js');
+import Prism from 'prismjs/prism';
 
 class HighlightContentDecorator extends ContentDecorator {
 
@@ -60,7 +60,7 @@ class HighlightContentDecorator extends ContentDecorator {
     decorate() {
         let tempValue = this._contentDecorator.decorate();
 
-        require(`prismjs/components/prism-${this._language}`);
+        import(`prismjs/components/prism-${this._language}`);
         return Prism.highlight(
             tempValue,
             Prism.languages[this._language],

@@ -15,6 +15,6 @@ export default class StringBuilder {
     }
 
     clear() {
-        this._array.length = 1;
+        this._array.length = 0;
     }
 }
