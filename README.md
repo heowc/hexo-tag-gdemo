@@ -68,6 +68,7 @@ If you do not want to use the CDN, fill in the following:
 gdemo:
   style_url:
   script_url: 
+  prismjs_theme:
 ```
 
 # FAQ
