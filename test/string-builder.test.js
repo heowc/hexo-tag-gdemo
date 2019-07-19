@@ -8,19 +8,19 @@ describe('Test StringBuilder API', () => {
 
     describe('constructor', () => {
         it('create `StringBuilder` as constructor with no-argument', () => {
-            let stringBuilder = new StringBuilder();
+            const stringBuilder = new StringBuilder();
             assert.equal(stringBuilder.toString(), EMPTY_STRING);
         });
 
         it('create `StringBuilder` as constructor with argument', () => {
-            let stringBuilder = new StringBuilder(TEST_STRING);
+            const stringBuilder = new StringBuilder(TEST_STRING);
             assert.equal(stringBuilder.toString(), TEST_STRING);
         });
     });
 
     describe('append', () => {
         it('after create `StringBuilder` as constructor with no-argument, append string', () => {
-            let stringBuilder = new StringBuilder();
+            const stringBuilder = new StringBuilder();
 
             stringBuilder.append(TEST_STRING);
 
@@ -28,7 +28,7 @@ describe('Test StringBuilder API', () => {
         });
 
         it('after create `StringBuilder` as constructor with argument, append string', () => {
-            let stringBuilder = new StringBuilder(TEST_STRING);
+            const stringBuilder = new StringBuilder(TEST_STRING);
 
             stringBuilder.append(TEST_STRING);
 
@@ -38,7 +38,7 @@ describe('Test StringBuilder API', () => {
 
     describe('clear', () => {
         it('after clear, append string', () => {
-            let stringBuilder = new StringBuilder();
+            const stringBuilder = new StringBuilder();
             stringBuilder.clear();
 
             stringBuilder.append(TEST_STRING);
@@ -47,7 +47,7 @@ describe('Test StringBuilder API', () => {
         });
 
         it('after append string, clear', () => {
-            let stringBuilder = new StringBuilder();
+            const stringBuilder = new StringBuilder();
             stringBuilder.append(TEST_STRING);
 
             stringBuilder.clear();

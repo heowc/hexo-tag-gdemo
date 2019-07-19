@@ -47,7 +47,7 @@ class SimpleContentDecorator extends ContentDecorator {
     }
 }
 
-import Prism from 'prismjs/prism.js';
+import Prism from 'prismjs/prism';
 
 class HighlightContentDecorator extends ContentDecorator {
 

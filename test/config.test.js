@@ -16,7 +16,7 @@ describe('Test Config API', () => {
     });
 
     it('create `Config` as constructor with default option', () => {
-        let config = new Config(testHexoConfig);
+        const config = new Config(testHexoConfig);
 
         assert.equal(config.getStyleUrl(), DEFAULT_GDEMO_STYLE_URL);
         assert.equal(config.getScriptUrl(), DEFAULT_GDEMO_SCRIPT_URL);
@@ -27,7 +27,7 @@ describe('Test Config API', () => {
     it('create `Config` as constructor with empty option', () => {
         testHexoConfig.config.gdemo = {};
 
-        let config = new Config(testHexoConfig);
+        const config = new Config(testHexoConfig);
 
         assert.equal(config.getStyleUrl(), DEFAULT_GDEMO_STYLE_URL);
         assert.equal(config.getScriptUrl(), DEFAULT_GDEMO_SCRIPT_URL);
@@ -42,7 +42,7 @@ describe('Test Config API', () => {
             prismjs_theme: 'test_theme'
         };
 
-        let config = new Config(testHexoConfig);
+        const config = new Config(testHexoConfig);
 
         assert.equal(config.getStyleUrl(), 'test_style_url');
         assert.equal(config.getScriptUrl(), 'test_script_url');
