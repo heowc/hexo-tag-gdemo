@@ -58,9 +58,12 @@ class HighlightContentDecorator extends ContentDecorator {
     }
 
     decorate() {
-        let tempValue = this._contentDecorator.decorate();
+        const tempValue = this._contentDecorator.decorate();
 
-        import(`prismjs/components/prism-${this._language}`);
+        const Prism = require('prismjs');
+        const loadLanguages = require('prismjs/components/');
+        loadLanguages([this._language]);
+
         return Prism.highlight(
             tempValue,
             Prism.languages[this._language],
