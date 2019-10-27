@@ -1,6 +1,6 @@
 {
   "name": "hexo-tag-gdemo",
-  "version": "0.10.3",
+  "version": "0.11.0",
   "description": "glorious-demo tag plugin for Hexo",
   "main": "./lib/index.js",
   "repository": {
