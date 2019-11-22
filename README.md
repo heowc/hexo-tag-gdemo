@@ -1,6 +1,6 @@
 # hexo-tag-gdemo
 
-[glorious-demo](https://github.com/glorious-codes/glorious-demo) tag plugin for Hexo (Based on version `0.8.0`)
+[glorious-demo](https://github.com/glorious-codes/glorious-demo) tag plugin for Hexo (Based on version `0.8.1`)
 
 # Introduction
 
@@ -13,8 +13,10 @@ This is a Hexo tag plugin which allow you to glorious-demo on your blog posts.
 # Installation
 
 ```text
-npm install hexo-tag-gdemo
+npm install @heowc/hexo-tag-gdemo
 ```
+
+※ Deprecated `npm install hexo-tag-gdemo`
 
 # Usage
 
