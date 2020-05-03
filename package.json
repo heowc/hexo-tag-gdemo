@@ -27,12 +27,12 @@
     "prismjs": "^1.16.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.0",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/register": "^7.4.4",
-    "mocha": "^6.2.2"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "mocha": "^6.2.3"
   },
   "scripts": {
     "build:lib": "npx babel src --out-dir lib",
