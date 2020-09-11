@@ -1,3 +1,5 @@
+![Test](https://github.com/heowc/hexo-tag-gdemo/workflows/Test/badge.svg)
+
 # hexo-tag-gdemo
 
 [glorious-demo](https://github.com/glorious-codes/glorious-demo) tag plugin for Hexo (Based on version `0.11.1`)
