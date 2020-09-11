@@ -1,4 +1,4 @@
-![Test](https://github.com/heowc/hexo-tag-gdemo/workflows/Test/badge.svg)
+![Test](https://github.com/heowc/hexo-tag-gdemo/workflows/CI/badge.svg)
 
 # hexo-tag-gdemo
 
