@@ -4,73 +4,76 @@ import Config from './config';
 import StringBuilder from './string-builder';
 import Content from './content';
 
-const config = new Config(hexo);
+module.exports = function(hexo) {
 
-hexo.extend.tag.register('gdemo_terminal', function (args, content) {
+    const config = new Config(hexo);
 
-    if (!args[0]) {
-        console.error('command is empty');
-        return;
-    }
+    hexo.extend.tag.register('gdemo_terminal', function (args, content) {
 
-    const command = args[0];
-    const minHeight = args[1] || '0px';
-    const windowTitle = args[2] || 'bash';
-    const onCompleteDelay = args[3] || 0;
-    const promptString = args[4] || '$';
-    const id = args[5] || 'demo-terminal';
-    const highlightLang = args[6] || 'javascript';
+        if (!args[0]) {
+            console.error('command is empty');
+            return;
+        }
 
-    const commands = command.split(';');
+        const command = args[0];
+        const minHeight = args[1] || '0px';
+        const windowTitle = args[2] || 'bash';
+        const onCompleteDelay = args[3] || 0;
+        const promptString = args[4] || '$';
+        const id = args[5] || 'demo-terminal';
+        const highlightLang = args[6] || 'javascript';
 
-    let sb = new StringBuilder();
-    sb.append(`
+        const commands = command.split(';');
+
+        let sb = new StringBuilder();
+        sb.append(`
         new GDemo('#${id}')
           .openApp('terminal', {minHeight: '${minHeight}', windowTitle: '${windowTitle}', promptString: '${promptString}'})
     `);
 
-    for (let i = 0; i < commands.length; i++) {
-        let highlightedCode = Content.highlight(commands[i], highlightLang);
-        sb.append(`.command(\`${highlightedCode}\`, {onCompleteDelay: ${onCompleteDelay}})`);
-    }
+        for (let i = 0; i < commands.length; i++) {
+            let highlightedCode = Content.highlight(commands[i], highlightLang);
+            sb.append(`.command(\`${highlightedCode}\`, {onCompleteDelay: ${onCompleteDelay}})`);
+        }
 
-    sb.append(`
+        sb.append(`
         .respond(\`${content}\`)
         .end();
     `);
 
-    return `<link rel="stylesheet" href="${config.getStyleUrl()}">
+        return `<link rel="stylesheet" href="${config.getStyleUrl()}">
             <link rel="stylesheet" href="${config.getPrismjsThemeStyleUrl()}">
             <script src="${config.getScriptUrl()}"></script>
             <div id='${id}' style='height: ${minHeight}'></div>
             <script>${sb.toString()}</script>`;
-}, {ends: true});
+    }, {ends: true});
 
-hexo.extend.tag.register('gdemo_editor', function (args, content) {
+    hexo.extend.tag.register('gdemo_editor', function (args, content) {
 
-    if (!content) {
-        console.error('content is empty');
-        return;
-    }
+        if (!content) {
+            console.error('content is empty');
+            return;
+        }
 
-    const minHeight = args[0] || '0px';
-    const windowTitle = args[1] || 'bash';
-    const onCompleteDelay = args[2] || 0;
-    const id = args[3] || 'demo-editor';
-    const highlightLang = args[4] || 'javascript';
+        const minHeight = args[0] || '0px';
+        const windowTitle = args[1] || 'bash';
+        const onCompleteDelay = args[2] || 0;
+        const id = args[3] || 'demo-editor';
+        const highlightLang = args[4] || 'javascript';
 
-    let highlightedCode = Content.highlight(content, highlightLang);
+        let highlightedCode = Content.highlight(content, highlightLang);
 
-    const demo = `
+        const demo = `
         new GDemo('#${id}')
           .openApp('editor', {minHeight: '${minHeight}', windowTitle: '${windowTitle}'})
           .write(\`${highlightedCode}\`, {onCompleteDelay: ${onCompleteDelay}})
           .end();
     `;
 
-    return `<link rel="stylesheet" href="${config.getStyleUrl()}">
+        return `<link rel="stylesheet" href="${config.getStyleUrl()}">
             <link rel="stylesheet" href="${config.getPrismjsThemeStyleUrl()}">
             <script src="${config.getScriptUrl()}"></script>
             <div id='${id}' style='height: ${minHeight}'></div>
             <script>${demo}</script>`;
-}, {ends: true});
+    }, {ends: true});
+};
