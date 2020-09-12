@@ -2,7 +2,7 @@
 
 # hexo-tag-gdemo
 
-[glorious-demo](https://github.com/glorious-codes/glorious-demo) tag plugin for Hexo (Based on version `0.11.1`)
+[glorious-demo](https://github.com/glorious-codes/glorious-demo) tag plugin for Hexo (Based on version `0.11.2`)
 
 # Introduction
 
