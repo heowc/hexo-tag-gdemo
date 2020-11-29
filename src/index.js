@@ -2,9 +2,9 @@
 
 import Config from './config';
 import StringBuilder from './string-builder';
-import Content from './content';
+import Contents from './content';
 
-module.exports = function(hexo) {
+module.exports = function (hexo) {
 
     const config = new Config(hexo);
 
@@ -27,25 +27,23 @@ module.exports = function(hexo) {
 
         let sb = new StringBuilder();
         sb.append(`
-        new GDemo('#${id}')
-          .openApp('terminal', {minHeight: '${minHeight}', windowTitle: '${windowTitle}', promptString: '${promptString}'})
-    `);
+new GDemo('#${id}')
+  .openApp('terminal', {minHeight: '${minHeight}', windowTitle: '${windowTitle}', promptString: '${promptString}'})\n`);
 
         for (let i = 0; i < commands.length; i++) {
-            let highlightedCode = Content.highlight(commands[i], highlightLang);
-            sb.append(`.command(\`${highlightedCode}\`, {onCompleteDelay: ${onCompleteDelay}})`);
+            let highlightedCode = Contents.highlight(commands[i], highlightLang);
+            sb.append(`  .command(\`${highlightedCode}\`, {onCompleteDelay: ${onCompleteDelay}})\n`);
         }
 
-        sb.append(`
-        .respond(\`${content}\`)
-        .end();
-    `);
+        sb.append(`  .respond(\`${content}\`)
+  .end();
+`);
 
         return `<link rel="stylesheet" href="${config.getStyleUrl()}">
-            <link rel="stylesheet" href="${config.getPrismjsThemeStyleUrl()}">
-            <script src="${config.getScriptUrl()}"></script>
-            <div id='${id}' style='height: ${minHeight}'></div>
-            <script>${sb.toString()}</script>`;
+<link rel="stylesheet" href="${config.getPrismjsThemeStyleUrl()}">
+<script src="${config.getScriptUrl()}"></script>
+<div id='${id}' style='height: ${minHeight}'></div>
+<script>${sb.toString()}</script>`;
     }, {ends: true});
 
     hexo.extend.tag.register('gdemo_editor', function (args, content) {
@@ -61,19 +59,19 @@ module.exports = function(hexo) {
         const id = args[3] || 'demo-editor';
         const highlightLang = args[4] || 'javascript';
 
-        let highlightedCode = Content.highlight(content, highlightLang);
+        let highlightedCode = Contents.highlight(content, highlightLang);
 
         const demo = `
-        new GDemo('#${id}')
-          .openApp('editor', {minHeight: '${minHeight}', windowTitle: '${windowTitle}'})
-          .write(\`${highlightedCode}\`, {onCompleteDelay: ${onCompleteDelay}})
-          .end();
-    `;
+new GDemo('#${id}')
+  .openApp('editor', {minHeight: '${minHeight}', windowTitle: '${windowTitle}'})
+  .write(\`${highlightedCode}\`, {onCompleteDelay: ${onCompleteDelay}})
+  .end();
+`;
 
         return `<link rel="stylesheet" href="${config.getStyleUrl()}">
-            <link rel="stylesheet" href="${config.getPrismjsThemeStyleUrl()}">
-            <script src="${config.getScriptUrl()}"></script>
-            <div id='${id}' style='height: ${minHeight}'></div>
-            <script>${demo}</script>`;
+<link rel="stylesheet" href="${config.getPrismjsThemeStyleUrl()}">
+<script src="${config.getScriptUrl()}"></script>
+<div id='${id}' style='height: ${minHeight}'></div>
+<script>${demo}</script>`;
     }, {ends: true});
 };

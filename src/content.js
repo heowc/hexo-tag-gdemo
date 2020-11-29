@@ -1,4 +1,4 @@
-export default class Content {
+export default class Contents {
 
     static default(value) {
         return new DefaultContentDecorator(value).decorate();
@@ -46,8 +46,6 @@ class SimpleContentDecorator extends ContentDecorator {
         return tempValue;
     }
 }
-
-import Prism from 'prismjs/prism';
 
 class HighlightContentDecorator extends ContentDecorator {
 
