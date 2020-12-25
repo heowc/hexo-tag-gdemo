@@ -76,3 +76,6 @@ typings/
 
 # Intellij
 .idea
+
+# etc
+lib

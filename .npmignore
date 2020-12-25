@@ -7,3 +7,5 @@ coverage/
 gulpfile.js
 .idea/
 appveyor.yml
+.github
+src/
