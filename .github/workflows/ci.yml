@@ -9,6 +9,7 @@ jobs:
         uses: actions/setup-node@v2.2.0
         with:
           node-version: '12'
+          cache: 'npm'
       - name: Get npm cache directory
         id: npm-cache
         run: |
