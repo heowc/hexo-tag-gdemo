@@ -3,10 +3,9 @@
     [
       "@babel/env",
       {
-        "targets": {
-          "chrome": "58",
-          "ie": "11"
-        }
+        "useBuiltIns": "entry",
+        "corejs": "3",
+        "targets": "> 0.25%, not dead"
       }
     ]
   ],
