@@ -1,5 +1,4 @@
 import assert from 'assert';
-import mlog from 'mocha-logger';
 
 describe('Test Tag API', () => {
 
@@ -40,7 +39,7 @@ describe('Test Tag API', () => {
             return renderPost();
         }).then(() => {
             const post = Post.findById(id);
-            mlog.log(post.content);
+            console.log(post.content);
             assert.equal(post.content, actual);
             return post.remove();
         });
